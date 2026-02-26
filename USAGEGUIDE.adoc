@@ -6,7 +6,7 @@ Use this page (USAGEGUIDE.adoc source file) as reference of the syntax for conte
 
 == Second level heading
 
-Example use of hyperlink to external website with https://docs.asciidoctor.org/asciidoc/latest/[click here,window=_blank] option.
+Example use of hyperlink to external website with https://docs.asciidoctor.org/asciidoc/latest/[click here^] option.
 
 === Third level heading
 
@@ -21,19 +21,19 @@ for new line in single paragraph.
 
 To render an image on the page, copy required image in `modules/chapterN/images` directory and reference it as below
 ----
-image::sample-image.png[]
+image::sample-image.png[title="caption and alt text"]
 ----
 
 Example:
 
-image::sample-image.png[]
+image::sample-image.png[title="caption and alt text"]
 
 . Numbered Step 1 
 . Numbered Step 2
 +
 [source,bash,role=execute]
 ----
-Code block for command with copy button.
+$ Code block for command with copy button.
 ----
 +
 .Sample Output
@@ -85,8 +85,4 @@ Table with header row:
 |Cell in column 2, row 3
 |===
 
-**SEE ALSO**
-
-- link:./README.md[Getting started with a new training content repository]
-- link:./DEVSPACE.md[Development using devspace]
 
