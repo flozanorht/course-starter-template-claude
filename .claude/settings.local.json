@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(npm run serve:*)",
+      "Bash(npm run watch:adoc:*)",
+      "Bash(gem list asciidoctor-pdf)",
+      "Bash(npm list @antora/pdf-extension)",
+      "Bash(npx antora --extension @antora/pdf-extension antora-playbook.yml)"
+    ]
+  }
+}
