@@ -1,6 +1,9 @@
 name: REPLACEREPONAME
 title: FIXME Course Title
 version: 1
+asciidoc:
+  attributes:
+    experimental: true
 nav:
 - modules/ROOT/nav.adoc
 - modules/LABENV/nav.adoc
