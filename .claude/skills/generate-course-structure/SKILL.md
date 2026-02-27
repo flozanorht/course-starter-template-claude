@@ -15,7 +15,7 @@ Generate a structured Antora course from the course design document by following
 1. **Verify course design document exists**
    - Check that `prompts/course-design.md` exists
    - If missing, inform the user and stop
-   - Stop watch mode.
+   - If watch mode is active, stop both its background tasks.
 
 2. **Parse the course design table**
    - Locate the "COURSE DESIGN" heading

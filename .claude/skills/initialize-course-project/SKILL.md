@@ -10,10 +10,10 @@ Configure the course project by following these steps:
    - If it exists, proceed with the following steps
 
 1. **Configure course type and lab environment**
-   - Invoke `course-init.sh` without arguments and parse its USAGE message
+   - Invoke `bash course-init.sh` without arguments and parse its USAGE message
    - Ask user which values to use for the arguments
    - Ask user the course title
-   - Invoke `course-init.sh` using the values provided by the user for arguments
+   - Invoke `bash course-init.sh` using the values provided by the user for arguments
    - Edit the files indicated by the output of the script to set the course title
    - Also edit `modules/ROOT/pages/index.adoc` to include the course title
 
