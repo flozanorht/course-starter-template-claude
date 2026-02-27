@@ -15,6 +15,7 @@ Red Hat Product Enablement course for IT professionals (developers/sysadmins).
 **Watch mode**:
 - Run both `npm run watch:adoc` AND `npm run serve` as background tasks.
 - Restart both background tasks if `antora.yaml` changes.
+- After stopping the `npm run serve` task must also stop the `npm exec http-server build/site -c-1` backgroud process.
 
 **Autostat watch mode**: Offer to start watch mode before making any changes to course content, if not active already.
 
