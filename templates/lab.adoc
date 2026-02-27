@@ -20,23 +20,22 @@ High-level summary of what you will perform in this lab, but more detailed than 
 
 1. Task or outcome.
 
-.. Something to do, using a GUI
+.. Something to do, using a graphical or web UI.
 Click menu:Save As[] to save your work.
 
 .. More things to do
 
-2. Task or outcome.;
+2. Task or outcome.
 
 .. Something to do, using a shell.
 +
-[source,subs="verbatim,quotes"]
+[source,console,subs="verbatim,quotes"]
 --
-$ *command --options*
+$ *command --options fixed-arguments _variable-arguments_*
+output of the command
+highlight *something* in the output
 --
-+
---
-output of the command (without a copy button)
---
+
 
 .. More things to do.
 Press kbd:[Ctrl+C] to interrupt.
