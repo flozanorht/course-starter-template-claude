@@ -15,6 +15,7 @@ Generate a structured Antora course from the course design document by following
 1. **Verify course design document exists**
    - Check that `prompts/course-design.md` exists
    - If missing, inform the user and stop
+   - Stop watch mode.
 
 2. **Parse the course design table**
    - Locate the "COURSE DESIGN" heading
@@ -41,7 +42,7 @@ Generate a structured Antora course from the course design document by following
 4. **Check for existing modules**
    - List current `modules/ch*` directories
    - Ask user if they want to keep existing modules or start fresh
-   - Store user's choice for cleanup step (step 13)
+   - Store user's choice for cleanup steps (steps 11 and 13)
 
 ## Chapter Creation
 
@@ -143,11 +144,14 @@ For each section under a learning objective:
    - Verify all section files exist before adding to nav.adoc
 
 11. **Update root navigation**
-    - File: `modules/ROOT/nav.adoc`
+    - File: `antora.yml`
     - Add entries for new chapters in order
-    - Preserve existing LABENV and appendix references
+    - Preserve existing ROOT, LABENV, and appendix references
     - Format: `* xref:ch{number}-{keyword}:index.adoc[]`
     - Place new chapter entries after LABENV and before appendix entries
+    - Remove entries from chapters that are not in the course design, for example `chapter1`
+    - DO NOT change `modules/ROOT/nav.adoc` or `modules/LABENV/nav.adoc`
+    - if user confirmed starting fresh in step 4, remove entries from chapters that are not in the course design, for example `chapter1`
 
 ## Validation
 
@@ -157,7 +161,7 @@ For each section under a learning objective:
       * Verify nav.adoc xref targets point to existing files
       * Confirm all template placeholders were replaced
     - Check navigation consistency:
-      * Every chapter index.adoc should be referenced in ROOT/nav.adoc
+      * Every chapter index.adoc should be referenced in `antora.yml`
       * Every section should be referenced in its chapter's nav.adoc
     - Report summary to user:
       * Number of chapters created
@@ -169,18 +173,20 @@ For each section under a learning objective:
 
 13. **Cleanup**
     - Only perform cleanup if user confirmed starting fresh in step 4
-    - Remove example directories if they exist and new chapters were created:
+    - Remove example directories if they exist and new chapters were created, for example:
       * `modules/chapter1/`
       * `modules/chapter2/`
       * `modules/chapter3/`
       * `modules/appendix/`
-    - Remove example files from all modules if they exist and new sections were created:
+    - Remove example files from all modules if they exist and new sections were created, for example:
       * `section1*.adoc`
       * `section2*.adoc`
       * `section3*.adoc`
-    - Clean up LABENV module:
-      * Keep the `modules/LABENV/` directory
-      * Remove all `LABENV/pages/*.adoc` files not referenced by `LABENV/nav.adoc`
+
+14. **Offer to start watch mode**
+   - Ask the user if they want to start watch mode
+   - If yes, start both `npm run watch:adoc` and `npm run serve` as background tasks
+   - Inform the user that watch mode is active and the course can be previewed in a browser
 
 ## Edge Cases
 
